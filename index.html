@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+    <meta charset="UTF-8">
+    <title>Ingreso de actas</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preload" as="script" href="main.js" />
+
+</head>
+<body>
+    <p class="Adonacion">dona 1 Sol al programador Paul Daly</p>
+    <div class="contenido">
+        <h1>REGISTRO DIARIO DE ACTAS</h1>
+        <form id="inputForm">
+            <label for="input1">MATPEL 621:</label>
+
+            <input type="number" class="inputs" id="input1" min="0" max="30"><br>
+
+
+            <label for="input2">TTM NACIONAL:</label>
+
+            <input type="number" class="inputs" id="input2" min="0" max="30"><br>
+
+
+            <label for="input3">TTP TURISTICO:</label>
+
+            <input type="number" class="inputs" id="input3" min="0" max="30"><br>
+
+
+            <label for="input4">TTP NACIONAL REGULAR:</label>
+
+            <input type="number" class="inputs" id="input4" min="0" max="30"><br>
+
+
+            <label for="input5">TT TRABAJADORES:</label>
+
+            <input type="number" class="inputs" id="input5" min="0" max="30"><br>
+
+
+            <label for="input6">TTM INTERNACIONAL:</label>
+
+            <input type="number" class="inputs" id="input6" min="0" max="30"><br>
+
+
+            <label for="input7">TTP INTERNACIONAL:</label>
+
+            <input type="number" class="inputs" id="input7" min="0" max="30"><br>
+
+
+            <label for="input8">T PRIVADO PASAJEROS:</label>
+
+            <input type="number" class="inputs" id="input8" min="0" max="30"><br>
+
+
+            <label for="input9">TTP OTROS:</label>
+
+            <input type="number" class="inputs" id="input9" min="0" max="30"><br>
+
+        </form>
+        <div class="fecha-hora">
+            <p id="fechayhora"></p>
+
+        </div>
+        <!-- <button id="buttonCalcular" type="button" onclick="calcularSuma(), mostrarAlerta()">CALCULAR</button> -->
+        <button id="buttonCalcular" type="button" onclick="calcularSuma()">CALCULAR</button>
+        <button id="buttonNuevo" type="button" onclick="limpiarFormulario()">NUEVO</button>
+        <!-- <div id="resultMessage"></div> -->
+        <!-- Agrega esta línea debajo de los botones -->
+
+        <div id="detalles"></div>
+       
+        <script>
+            function calcularSuma() {
+                var detalles = 'Detalles:\n';
+                var suma = 0; // Inicializa la suma en 0
+               
+                for (var i = 1; i <= 9; i++) {
+                    var inputId = 'input' + i;
+                    var inputField = document.getElementById(inputId);
+                    var inputValue = parseInt(inputField.value) || 0;
+
+                    suma += inputValue; // Suma el valor actual al total
+
+                    // Obtén el texto del <label> correspondiente
+                    var labelForInput = document.querySelector('label[for="' + inputId + '"]').textContent;
+
+                    // Agrega los detalles de cada valor del formulario con el texto del <label>
+                    detalles += labelForInput + ': ' + inputValue + '\n';
+                }
+                detalles += 'Suma Total; ' + suma;
+                alert(detalles);
+                // resultMessage.innerHTML = 'Suma Total: ' + suma; // Muestra la suma total
+                var now = new Date();
+                var fechayhora = document.getElementById('fechayhora');
+
+                fechayhora.innerHTML = 'Fecha y Hora: ' + ''  + now.toLocaleString() ;
+                mostrarAlerta();
+            }
+       
+        </script>
+        <script>
+            function limpiarFormulario() {
+                // var resultMessage = document.getElementById('resultMessage');
+                var fechayhora = document.getElementById('fechayhora');
+
+                // resultMessage.innerHTML = ''; // Limpia el mensaje de resultados
+                fechayhora.innerHTML = '';
+
+                var resultDetails = document.getElementById('detalles');
+
+                resultDetails.innerHTML = ''; // Limpia los detalles anteriores
+
+                for (var i = 1; i <= 9; i++) {
+                    var inputId = 'input' + i;
+                    var inputField = document.getElementById(inputId);
+
+                    inputField.value = ''; // Limpia el valor de cada campo de entrada
+                }
+            }
+        </script>
+    </div>
+   
+</body>
+</html>

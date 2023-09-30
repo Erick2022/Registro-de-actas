@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.my-custom-alert{
+    color: rgb(44, 44, 242);
+    font-size: 10px;
+    background-color: black;
+
+}
+body {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f6f31f;
+    border: none;
+    /* Cambia este valor al color que desees para el fondo */
+}
+.Adonacion {
+    position: fixed;
+    bottom: 10px; /* Sube el elemento 10 píxeles desde la parte inferior */
+    right: 10px; /* Mueve el elemento 10 píxeles a la izquierda desde el borde derecho */
+    margin: 0;
+    padding: 10px; /* Ajusta el espacio alrededor del texto según tus preferencias */
+    background-color: #f5f5f5; /* Cambia el color de fondo según tus preferencias */
+    color: #333; /* Cambia el color del texto según tus preferencias */
+    font-size: 16px; /* Cambia el tamaño de fuente según tus preferencias */
+}
+
+.contenido {
+    text-align: center;
+    margin: 30px;
+    padding: 20px;
+    border:  6px solid #f3ebeb;;
+    text-align: right;
+
+    /* Esto centrará el contenido dentro del contenedor */
+}
+label {
+    padding-top: 5px;
+}
+.inputs {
+    width: 40px;
+    height: 35px;
+    font-size: 35px;
+    padding-top: 5px;
+}
+.fecha-hora {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 25px;
+    margin-right: 20px;
+}
+#resultMessage {
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#resultDetails {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+#fecha-hora{ 
+    background-color: #f3ebeb;
+    text-align: right;
+    margin-top: 20px;
+    position: absolute;
+    font-size: 20px;
+    margin-right: 10px;
+    display: block;
+
+}
+* Estilo para los inputs*/ #inputForm input {
+    border: none;
+    align-items: right;
+    clear: both;
+    /* Asegura que los elementos no floten a la izquierda de otros elementos */
+    display: block;
+    /* Muestra los inputs en bloques separados */
+}
+
+#buttonCalcular {
+    border: none;
+    width: 150px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#buttonNuevo {
+    font-size: 24px;
+    font-weight: bold;
+    width: 150px;
+    height: 40px;
+    border: none;
+}
